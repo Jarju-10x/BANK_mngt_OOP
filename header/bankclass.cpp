@@ -60,6 +60,40 @@ void Bank::displayAllAccounts(){
         }      
 }
 
-void Bank::deposit(double amount){
+void Bank::deposit(std::string accNum, double amount){
+        for(auto& acc : accounts){
+                if(acc.get_accNum() == accNum){
+                    double newBalance = acc.get_balance() + amount;
+                    acc.set_balance(newBalance);
+                    std::cout << " Deposited   : " << amount << "\n";
+                    std::cout << " New Balance : " << acc.get_balance() << "\n";
+                }
+        }
+        std::cout << "\n Account not Found\n";
+}
 
+void Bank::withdraw(double amount, std::string accNum)
+{
+        for(auto& acc : accounts){
+                if(acc.get_accNum() == accNum){
+                        int PIN, trys = 0;
+                        do{
+                        std::cout << "Enter your acc PIN :*: "; std::cin >> PIN ;
+                        if(PIN == acc.get_pin()){
+                                int currBal = acc.get_balance();
+                                if(amount < currBal){
+                                  double newBal = currBal - amount;
+                                  acc.set_balance(newBal);
+                                  std::cout << "Amount withdrawn : " << amount << "\n";
+                                  std::cout << " New Balance : " << acc.get_balance();      
+                                }else{
+                                  std::cout << " Insufficient Amount !!! please depposit first\n";
+                                }
+                                return; 
+                        }
+                        std::cout << "Wrong PIN entered !!!\n"; trys++;
+                      }while(trys < 4);
+                           
+                }
+        }
 }

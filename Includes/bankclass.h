@@ -43,10 +43,10 @@ class Account {
             void displayAllAccounts();
         
         // Function to deposit money
-            void deposit(double amount);   
+            void deposit(std::string accNum, double amount);   
         
         // Function to withdraw money
-            void withdraw(double amount, int enteredPin);       
+            void withdraw(double amount, std::string accNum);       
         
         // Function to change PIN
             void changePin(int oldPin, int newPin);
