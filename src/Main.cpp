@@ -14,13 +14,10 @@ int main(int argc, char** argv) {
         Banner(chose);
 
         if(chose == 1) IB_Bank.addAccount();
-        if(chose == 2) IB_Bank.addAccount();
-        if(chose == 1) IB_Bank.addAccount();
-
+        if(chose == 3) IB_Bank.displayAllAccounts();
+        if(chose == 4) return 0;
         //cout << "\n\tSEE You Again ! My friend\n";
         }while(1);
-
-        return 0;
 }
 
 void Banner(int& chose){
@@ -51,4 +48,5 @@ void Login(Bank &bk)
         cout << " Enter your username : "; getline(cin, user);
         cout << " Enter your acc PIN* : "; cin >>  passwd;
         
+        //Don't know how to fetch the data details from factory methods
 }

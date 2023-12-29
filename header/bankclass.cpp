@@ -26,6 +26,7 @@ void Account::displayAccountDetails() const{
         std::cout <<"\n-- Mobile Number  := " << mob << "\n";
         std::cout <<"\n-- Account Balance:= " << balance << "\n\n";
         std::cout <<"--------------------------------------------\n";
+        std::cin.get();
 }
 
 void Bank::addAccount(){
@@ -53,6 +54,7 @@ void Bank::addAccount(){
 }
 
 void Bank::displayAllAccounts(){
+        system("cls");
         std::cout << "\n\t--All Accounts in Bank --\n";
         for (const auto &acc : Bank::accounts)
         {
@@ -96,4 +98,4 @@ void Bank::withdraw(double amount, std::string accNum)
                            
                 }
         }
-}
+ }
