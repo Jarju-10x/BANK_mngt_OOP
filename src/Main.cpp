@@ -15,8 +15,8 @@ int main(int argc, char** argv) {
 
         if(chose == 1) IB_Bank.addAccount();
         if(chose == 3) IB_Bank.displayAllAccounts();
-        if(chose == 4) return 0;
-        //cout << "\n\tSEE You Again ! My friend\n";
+        if(chose == 4){ cout << "\n\tSEE You Again ! My friend\n"; return 0; }
+        
         }while(1);
 }
 

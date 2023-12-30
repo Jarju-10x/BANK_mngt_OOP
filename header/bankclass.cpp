@@ -26,6 +26,7 @@ void Account::displayAccountDetails() const{
         std::cout <<"\n-- Mobile Number  := " << mob << "\n";
         std::cout <<"\n-- Account Balance:= " << balance << "\n\n";
         std::cout <<"--------------------------------------------\n";
+        std::cin.ignore();
         std::cin.get();
 }
 
@@ -60,6 +61,7 @@ void Bank::displayAllAccounts(){
         {
                 acc.displayAccountDetails();   
         }      
+        //std::cout << "This is last account !!!\n";
 }
 
 void Bank::deposit(std::string accNum, double amount){
